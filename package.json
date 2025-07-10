@@ -1,0 +1,24 @@
+{
+  "name": "valheim-website",
+  "version": "1.0.0",
+  "description": "**Bienvenido, vikingo.** Este es el portal oficial de la comunidad de tu servidor Valheim, donde se forjan historias, se comparten conocimientos y se une la hermandad vikinga.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkasdanouche/valheim-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkasdanouche/valheim-website/issues"
+  },
+  "homepage": "https://github.com/jkasdanouche/valheim-website#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1"
+  }
+}
