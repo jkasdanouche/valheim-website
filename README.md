@@ -1,138 +1,113 @@
-# 🛡️ Valheim Community Portal
+# 🛡️ Valheim Website
 
-**Bienvenido, vikingo.** Este es el portal oficial de la comunidad de tu servidor Valheim, donde se forjan historias, se comparten conocimientos y se une la hermandad vikinga.
-
-Un sistema completo que incluye:
-- 📰 Noticias del servidor (texto, imágenes y videos)
-- 🧠 Wiki colaborativa
-- 🛡️ Foro de discusión
-- 🔥 Sistema de cuentas de usuario
-- ⚔️ Integración en tiempo real con el servidor mediante **Socket.IO**
-- 💰 Botones de donación discretos pero visibles (PayPal)
-- 🌐 Página web desarrollada en **Angular 20** con backend en **Node.js**
-
-> _"Levanta tu hacha, construye tu asentamiento y deja tu legado."_
+Welcome to the official open-source project for your **Valheim server companion website**, designed to bring the Viking spirit online with a real-time, community-driven experience.
 
 ---
 
-## 🧭 Estructura del Proyecto
+## ⚔️ What is this?
+
+A custom web platform built using **Angular 20**, **Node.js (Express)**, **MariaDB**, and **Socket.IO**, styled and themed using **Valheim textures and Norse aesthetics**.
+
+It includes:
+
+- 🔐 Account system (register, login, roles)
+- 🌐 Real-time server status (players online, uptime)
+- 📰 News system with text, images, and videos
+- 🧵 Full forum (threads, replies, moderation)
+- 📖 Collaborative wiki for Valheim guides or lore
+- 💰 Non-intrusive PayPal donation buttons across the site
+- 🧠 Admin panel (future addition)
+
+---
+
+## 🏗️ Project Structure
 
 ```
 valheim-website/
-├── frontend/     # Aplicación Angular 20 (interfaz web)
-├── backend/      # Node.js + Socket.IO (servidor)
-├── database/     # Scripts SQL y backups para MariaDB
-├── README.md
-├── .gitignore
-└── LICENSE
+├── envValheimWebsite/      # nodeenv environment (not committed)
+├── backend/                # Express + Socket.IO backend
+│   └── src/
+│       ├── config/
+│       ├── controllers/
+│       ├── middleware/
+│       ├── models/
+│       ├── routes/
+│       ├── sockets/
+│       ├── utils/
+│       └── app.js
+├── frontend/               # Angular 20 client
+├── database/               # SQL schemas and seeds
+└── README.md
 ```
 
 ---
 
-## ⚙️ Requisitos
+## 🧪 Tech Stack
 
-- **Node.js** 20+
-- **Angular CLI** 20+
-- **MariaDB** 10.6+
-- Git, npm
+| Layer         | Technology                     |
+|---------------|--------------------------------|
+| Frontend      | Angular v20 + ngx-socket-io    |
+| Backend       | Node.js + Express              |
+| Realtime      | Socket.IO                      |
+| Database      | MariaDB                        |
+| Styling       | Custom + Valheim theme         |
+| Environment   | nodeenv (Python virtual Node.js) |
 
 ---
 
-## 🛠️ Instalación rápida
+## ⚙️ Getting Started
 
-### 🔮 Clonar el repositorio
+### 🧭 Requirements
+
+- Node.js with `nodeenv` activated
+- MariaDB running locally or remotely
+- Git (of course)
+
+### 🚀 Backend Setup
 
 ```bash
-git clone https://github.com/TU-USUARIO/valheim-website.git
-cd valheim-website
+# Activate your virtual environment
+source envValheimWebsite/bin/activate
+
+cd backend/
+npm install
+
+# Add your environment variables
+cp .env.example .env
+
+# Run the backend
+npm run dev
 ```
 
-### 🚀 Levantar el frontend
+### 🎨 Frontend Setup
 
 ```bash
-cd frontend
+cd ../frontend/
 npm install
 ng serve
 ```
 
-La página estará disponible en `http://localhost:4200`
+---
 
-### 🔧 Levantar el backend
+## 💡 Future Features
 
-```bash
-cd ../backend
-npm install
-node server.js
-```
-
-El servidor escuchará en `http://localhost:3000` (o el puerto que definas)
-
-### 🗄️ Base de datos
-
-Importa el archivo SQL:
-
-```bash
-mysql -u root -p valheim_db < database/init.sql
-```
-
-> Asegúrate de tener creada la base de datos `valheim_db` antes de importar.
+- 🧭 Admin dashboard with statistics
+- 📊 Server history logs and graphs
+- 📦 Plugin/addon management (if applicable)
+- 🛠️ Panel for moderators
 
 ---
 
-## 🔌 Tiempo real con Socket.IO
+## 🧙‍♂️ Inspired by Valheim
 
-Usamos **Socket.IO** en el backend, y en el frontend se comunica a través de `ngx-socket-io` para notificaciones en tiempo real, actualizaciones de estado del servidor, y más.
-
----
-
-## 🧠 Wiki, Foro y Noticias
-
-El frontend incluye:
-- Sistema de publicación (admins y mods)
-- Wiki colaborativa con edición en tiempo real
-- Foro estilo clásico con categorías, hilos, y respuestas
-
-Todo gestionado desde el backend con API segura.
+This project is lovingly themed around Valheim. All UI elements aim to reflect the Norse-Viking ambiance while remaining accessible and performant.
 
 ---
 
-## 🧭 Donaciones
+## 🛡 License
 
-En cada sección hay botones para **donar vía PayPal** que se integran sin molestar al usuario, pero visibles para quien quiera apoyar el servidor.
-
----
-
-## 🔐 Seguridad y despliegue
-
-- JWT para autenticación
-- Roles y permisos
-- Preparado para despliegue con Docker (en desarrollo)
-- Posible integración futura con Steam o Discord
+This project is under the MIT License. You are free to fork, improve, or adapt as long as you keep the spirit of the project intact.
 
 ---
 
-## ⚔️ Contribuir
-
-¡Se aceptan pull requests de todo vikingo valiente que quiera mejorar el proyecto!
-
-1. Haz un fork
-2. Crea tu rama: `git checkout -b feature/tu-mejora`
-3. Commit: `git commit -m "Agrega runas mágicas"`
-4. Push: `git push origin feature/tu-mejora`
-5. Abre un Pull Request
-
----
-
-## 📜 Licencia
-
-Este proyecto está licenciado bajo [MIT](LICENSE).
-
----
-
-## 🍻 Créditos
-
-Desarrollado por la comunidad, para la comunidad.
-
-Inspirado por el mundo brutal y hermoso de **Valheim**.
-
-> _"Recuerda: si mueres sin subir tu código al GitHub de los dioses, no serás recordado en los salones de Valhalla."_
+Made by a Viking. For Vikings. ⚔️
