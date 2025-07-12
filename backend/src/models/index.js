@@ -1,4 +1,5 @@
 const sequelize = require('../config/database');
+const News = require('./News');
 const User = require('./User');
 
 async function connectDb() {
@@ -10,4 +11,4 @@ async function connectDb() {
     }
 }
 
-module.exports = { sequelize, connectDb, User };
+module.exports = { sequelize, connectDb, User, News };
